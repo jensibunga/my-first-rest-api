@@ -6,24 +6,24 @@ const router = express.Router();
 const Ninja = require("../models/ninja");
 
 //get a list of ninjas from db
-router.get('/ninjas', function (req, res, next) {
-  //res.send({ type: 'GET' });
-  // Ninja.aggregate().near()({
-  //   near: {
-  //     type: 'Point',
-  //     'coordinates': [parseFloat(req.query.lng), parseFloat(req.query.lat)]
-  //   },
-  //   maxDistance: 1000000,
-  //   spherical: true,
-  //   distanceField: "dist.calculated"
-  // });
-  Ninja.geoNear({
-    type:"Point",coordinates:[parseFloat(req.query.lng),parseFloat(req.query.lat)]},
-    {maxDistance: 1000000,spherical: true}
-  ).then(function(ninjas){
+router.get('/ninjas', function(req, res, next) {
+  Ninja.aggregate([
+    {
+      $geoNear: {
+        near: {
+          type: 'Point',
+          coordinates: [parseFloat(req.query.lng), parseFloat(req.query.lat)]
+        },
+        distanceField: "dist.calculated",
+        maxDistance: 100000,
+        spherical: true
+      }
+    }
+  ]).then(function (ninjas) {
     res.send(ninjas);
-  });
+  }).catch(next);
 });
+
 //add a new ninja to the db
 router.post('/ninjas', function (req, res, next) {
   Ninja.create(req.body).then(function (ninja) {
