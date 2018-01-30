@@ -4,7 +4,10 @@
 
 * Followed net-ninja tutorial about REST API and followed demo application tutorial.
 
-### Technologies Used -Node.js, React, MongoDb
+### Technologies Used
+* Node.js
+* Basic React
+* MongoDb
 
 ### URL 
 
