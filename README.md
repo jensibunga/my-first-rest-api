@@ -2,7 +2,7 @@
 
 #### Description
 
-As part of Mern Stack development tutorial in [Restart Network](https://restart.network/) curriculum I followed and created  this application that will allow user to locate a ninja using Geo Near Locator. 
+As part of Mern Stack development tutorial during my [Restart Network](https://restart.network/) guide period I followed and created  this application that will allow user to locate a ninja using Geo Near Locator. 
 
 #### Technologies Used
 * Node.js
