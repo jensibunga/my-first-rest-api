@@ -18,4 +18,4 @@ As part of Mern Stack development tutorial during my [Restart Network](https://r
 
 #### URL 
 
-* https://my-first-rest-api.appspot.com/
+* https://finding-ninja-app.herokuapp.com
