@@ -27,8 +27,8 @@ res.status(422).send({error:err.message});
 
 
 //listen for requests
-//app.listen( process.env.port || 4000, function(){
-app.listen(8080, function(){
+app.listen( process.env.port || 4000, function(){
+//app.listen(8080, function(){ for google cloud 
 console.log('now listening for requests');
 
 });
